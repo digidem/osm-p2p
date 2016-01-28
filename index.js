@@ -24,8 +24,18 @@ module.exports = function (opts) {
     if (err) osm.emit('error', err)
     var store = fdstore(chunkSize, path.join(dir, 'kdb'))
     defStore.setStore(store)
-    defIndexDB.setDb(leveldown(path.join(dir, 'index')))
-    defLogDB.setDb(leveldown(path.join(dir, 'log')))
+
+    var indexDown = leveldown(path.join(dir, 'index'))
+    indexDown.open(function (err) {
+      if (err) osm.emit('error', err)
+      else defIndexDB.setDb(indexDown)
+    })
+
+    var logDown = leveldown(path.join(dir, 'log'))
+    logDown.open(function (err) {
+      if (err) osm.emit('error', err)
+      else defLogDB.setDb(logDown)
+    })
   })
   return osmdb({
     log: log,
