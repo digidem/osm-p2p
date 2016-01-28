@@ -1,0 +1,28 @@
+{
+  "name": "osm-p2p",
+  "version": "1.0.0",
+  "description": "high-level p2p open street map database for node and the browser",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "dependencies": {
+    "deferred-chunk-store": "^1.0.0",
+    "deferred-leveldown": "^1.2.1",
+    "fd-chunk-store": "^1.3.0",
+    "hyperlog": "^4.7.0",
+    "leveldown": "^1.4.4",
+    "levelup": "^1.3.1",
+    "mkdirp": "^0.5.1",
+    "osm-p2p-db": "^3.3.0"
+  },
+  "devDependencies": {
+    "tape": "^4.4.0"
+  },
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "keywords": [],
+  "author": "substack",
+  "license": "BSD"
+}
