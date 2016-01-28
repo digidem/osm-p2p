@@ -8,8 +8,9 @@ function onadd (ev) {
   var form = this
   ev.preventDefault()
   var doc = {
-    lat: this.elements.lat.value,
-    lon: this.elements.lon.value
+    type: 'node',
+    lat: Number(this.elements.lat.value),
+    lon: Number(this.elements.lon.value)
   }
   osm.create(doc, function (err, key, node) {
     if (err) console.error(err)
