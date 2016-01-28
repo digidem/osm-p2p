@@ -32,4 +32,20 @@ if (process.argv[2] === 'create') {
 function csplit (x) { return x.split(',').map(Number) }
 ```
 
+output:
+
+```
+$ node osm.js create '{"id":"A","lat":64.5,"lon":-147.6}'
+d5b32ade3a052bb2
+$ node osm.js create '{"id":"B","lat":62.9,"lon":-146.1}'
+8594030e41faf93c
+$ node osm.js create '{"id":"C","lat":65.5,"lon":-148.2}'
+eb8206fe16e4d8d8
+$ node osm.js query 61,65 -149,-147
+{ id: 'd5b32ade3a052bb2',
+  lat: 64.5,
+  lon: -147.6,
+  version: '6732d1580bc07c9ab4d07c56025825998a0741f528e4cd2b48c1fdbfb26389b2' }
+```
+
 # browser example
