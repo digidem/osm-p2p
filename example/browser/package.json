@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "build": "browserify main.js > bundle.js",
+    "watch": "watchify main.js -o bundle.js -dv",
+    "start": "ecstatic -p 8000 ."
+  }
+}

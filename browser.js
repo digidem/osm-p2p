@@ -10,6 +10,6 @@ module.exports = function (opts) {
   return osmdb({
     log: log,
     db: level(opts.indexName || 'index'),
-    store: idbStore(opts.chunkSize || 4096)
+    store: idbstore(opts.chunkSize || 4096)
   })
 }

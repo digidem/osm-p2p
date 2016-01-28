@@ -1,0 +1,35 @@
+<body>
+  <h1>add point</h1>
+  <form id="add">
+    <table>
+      <tr>
+        <th>lat</th>
+        <td><input type="text" name="lat"></td>
+      </tr>
+      <tr>
+        <th>lon</th>
+        <td><input type="text" name="lon"></td>
+      </tr>
+    </table>
+    <button type="submit">add point</button>
+  </form>
+  <hr>
+  <h1>query</h1>
+  <form id="query">
+    <table>
+      <tr>
+        <th>lat</th>
+        <td>min=<input type="text" name="minlat"></td>
+        <td>max=<input type="text" name="maxlat"></td>
+      </tr>
+      <tr>
+        <th>lon</th>
+        <td>min=<input type="text" name="minlon"></td>
+        <td>max=<input type="text" name="maxlon"></td>
+      </tr>
+    </table>
+    <button type="submit">query</button>
+    <pre id="query-results"></pre>
+  </form>
+  <script src="bundle.js"></script>
+</body>
