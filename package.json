@@ -35,5 +35,13 @@
     "map"
   ],
   "author": "substack",
-  "license": "BSD"
+  "license": "BSD",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digidem/osm-p2p.git"
+  },
+  "bugs": {
+    "url": "https://github.com/digidem/osm-p2p/issues"
+  },
+  "homepage": "https://github.com/digidem/osm-p2p#readme"
 }
