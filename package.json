@@ -12,7 +12,7 @@
     "deferred-leveldown": "^1.2.1",
     "fd-chunk-store": "^2.0.0",
     "hyperlog": "^4.7.0",
-    "idb-chunk-store": "^0.1.0",
+    "idb-chunk-store": "~0.1.0",
     "level-browserify": "^1.1.0",
     "leveldown": "^1.4.4",
     "levelup": "^1.3.1",
@@ -25,7 +25,15 @@
   "scripts": {
     "test": "tape test/*.js"
   },
-  "keywords": [],
+  "keywords": [
+    "osm",
+    "open street map",
+    "p2p",
+    "database",
+    "replication",
+    "geo",
+    "map"
+  ],
   "author": "substack",
   "license": "BSD"
 }
