@@ -135,8 +135,8 @@ Ways must have:
 
 Relations must have:
 
-* `doc.members` - an array of objects with `id` and optional `role` string
-properties.
+* `doc.members` - an array of objects with a `member.type` with the type of the
+document pointed at by `member.ref` and an optional [`member.role`][5]
 
 Changesets should have:
 
@@ -145,6 +145,8 @@ Changesets should have:
 All documents can have:
 
 * `doc.tags` - an object with additional document metadata
+
+[5]: http://wiki.openstreetmap.org/wiki/Relation#Roles
 
 ## osm.put(id, doc, opts={}, cb)
 
