@@ -17,12 +17,12 @@ module.exports = function (opts) {
   var defLogDB = new deflevel()
 
   var log = hyperlog(levelup(defLogDB), { valueEncoding: 'json' })
-  var chunkSize = opts.chunkSize || 4096
-  var defStore = deferredStore(chunkSize)
+  var chunkLength = opts.chunkLength || 4096
+  var defStore = deferredStore(chunkLength)
 
   mkdirp(dir, function (err) {
     if (err) osm.emit('error', err)
-    var store = fdstore(chunkSize, path.join(dir, 'kdb'))
+    var store = fdstore(chunkLength, path.join(dir, 'kdb'))
     defStore.setStore(store)
 
     var indexDown = leveldown(path.join(dir, 'index'))
