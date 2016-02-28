@@ -36,13 +36,13 @@ output:
 
 ```
 $ node osm.js create '{"id":"A","lat":64.5,"lon":-147.6}'
-d5b32ade3a052bb2
+15398698684854381490
 $ node osm.js create '{"id":"B","lat":62.9,"lon":-146.1}'
-8594030e41faf93c
+9625321663368984892
 $ node osm.js create '{"id":"C","lat":65.5,"lon":-148.2}'
-eb8206fe16e4d8d8
+16970134034261006552
 $ node osm.js query 61,65 -149,-147
-{ id: 'd5b32ade3a052bb2',
+{ id: '15398698684854381490',
   lat: 64.5,
   lon: -147.6,
   version: '6732d1580bc07c9ab4d07c56025825998a0741f528e4cd2b48c1fdbfb26389b2' }
