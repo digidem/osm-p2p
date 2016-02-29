@@ -1,6 +1,6 @@
 {
   "name": "osm-p2p",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "high-level p2p open street map database for node and the browser",
   "main": "index.js",
   "browser": "browser.js",
