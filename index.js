@@ -37,11 +37,12 @@ module.exports = function (opts) {
       else defLogDB.setDb(logDown)
     })
   })
-  return osmdb({
+  var osm = osmdb({
     log: log,
     db: levelup(defIndexDB),
     store: defStore
   })
+  return osm
 }
 
 function levelup (down) {
