@@ -3,6 +3,7 @@ var fdstore = require('fd-chunk-store')
 var path = require('path')
 var mkdirp = require('mkdirp')
 var osmdb = require('osm-p2p-db')
+var once = require('once')
 
 var LevelUp = require('levelup')
 var leveldown = require('leveldown')
@@ -36,10 +37,21 @@ module.exports = function (opts) {
       if (err) osm.emit('error', err)
       else defLogDB.setDb(logDown)
     })
+    db.close = function (cb) {
+      cb = once(cb || noop)
+      var pending = 2
+      indexDown.close(onclose)
+      logDown.close(onclose)
+      function onclose (err) {
+        if (err) cb(err)
+        else if (--pending === 0) cb(null)
+      }
+    }
   })
+  var db = levelup(defIndexDB)
   var osm = osmdb({
     log: log,
-    db: levelup(defIndexDB),
+    db: db,
     store: defStore
   })
   return osm
@@ -48,3 +60,4 @@ module.exports = function (opts) {
 function levelup (down) {
   return new LevelUp({ db: function () { return down } })
 }
+function noop () {}
