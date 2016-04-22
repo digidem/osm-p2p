@@ -11,7 +11,7 @@
     "deferred-chunk-store": "^1.0.1",
     "deferred-leveldown": "^1.2.1",
     "fd-chunk-store": "^2.0.0",
-    "hyperlog": "^4.8.1",
+    "hyperlog": "^4.10.0",
     "idb-chunk-store": "~0.1.0",
     "level-browserify": "^1.1.0",
     "leveldown": "^1.4.4",
