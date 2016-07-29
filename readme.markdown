@@ -192,6 +192,10 @@ The query `q` is an array of `[[minLat,maxLat],[minLon,maxLon]]`.
 `cb(err, results)` fires with an array of `results`, which are the documents
 values plus a `version` property that is the hash from the underlying hyperlog.
 
+Optionally:
+
+* `opts.order` - set to `'type'` to order by type: node, way, relation
+
 ## var rstream = osm.queryStream(q, opts)
 
 Query for all nodes, ways, and relations in the bounding box query given by `q`.
