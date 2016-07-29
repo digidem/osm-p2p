@@ -205,6 +205,10 @@ The query results are provided by a readable stream `rstream`. Each object is a
 document from the database with a `version` property that is the hash of the
 document from the underlying hyperlog.
 
+Optionally:
+
+* `opts.order` - set to `'type'` to order by type: node, way, relation
+
 ## var rstream = osm.getChanges(id, cb)
 
 Given a changeset `id`, get a list of document IDs in the changeset either as
