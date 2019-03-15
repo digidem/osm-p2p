@@ -39,7 +39,9 @@ module.exports = function (opts) {
   var osm = osmdb({
     core: kappa(dir, {valueEncoding: 'json'}),
     index: index,
-    storage: raf
+    storage: function (name, cb) {
+      process.nextTick(cb, null, raf(path.join(dir, 'storage', name)))
+    }
   })
   return osm
 }
