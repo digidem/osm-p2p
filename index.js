@@ -13,12 +13,24 @@ module.exports = function (opts) {
   mkdirp.sync(path.join(dir, 'index'))
   mkdirp.sync(path.join(dir, 'storage'))
 
-  var osm = osmdb({
-    core: kappa(dir, {valueEncoding: 'json', encryptionKey: opts.encryptionKey}),
-    index: level(path.join(dir, 'index')),
-    storage: function (name, cb) {
-      process.nextTick(cb, null, raf(path.join(dir, 'storage', name)))
+  var core = kappa(dir, {valueEncoding: 'json', encryptionKey: opts.encryptionKey})
+  var _storage = raf(path.join(dir, 'storage', name))
+  var storage = function (name, cb) {
+    process.nextTick(cb, null, _storage)
+  }
+  var index = level(path.join(dir, 'index'))
+
+  var osm = osmdb({ core, index, storage })
+	
+  osm.close = (cb) => {
+    var pending = 2 
+    _storage.close(done)
+    index.close(done)
+
+    function done() {
+      if (--pending) return
+      if (cb) cb()
     }
-  })
+  }
   return osm
 }
